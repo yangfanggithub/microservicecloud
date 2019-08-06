@@ -9,19 +9,20 @@ import org.springframework.web.client.RestTemplate;
 @RequestMapping("/consumer/dept")
 public class DeptControllerConsumer {
 
-    private static String REQUEST_URL="http://localhost:8081/dept";
+    //private static final String REQUEST_URL="http://localhost:8081/dept";
+    private static final String REQUEST_URL="http://PROVIDER-DEPT-8001";
 
     @Autowired
     private RestTemplate restTemplate;
 
     @PostMapping("/add")
     public boolean add(Dept dept){
-        return restTemplate.postForObject(REQUEST_URL+"/add",dept, Boolean.class);
+        return restTemplate.postForObject(REQUEST_URL+"/dept/add",dept, Boolean.class);
     }
 
     @GetMapping("/get/{id}")
     public Dept get(@PathVariable String id){
-        return restTemplate.getForObject(REQUEST_URL+"/get/"+id,Dept.class);
+        return restTemplate.getForObject(REQUEST_URL+"/dept/get/"+id,Dept.class);
     }
 
 }

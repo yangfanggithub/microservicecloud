@@ -1,3 +1,7 @@
+[TOC]
+
+# Eureka配置
+
 EUREKA服务端的启动需要加入以下包
 
 ```xml
@@ -121,5 +125,55 @@ eureka中查看服务配置（负责服务信息的监控）
 
 ```yaml
 
+```
+
+
+
+
+
+
+
+[TOC]
+
+# 配置Rebion（客户端负载均衡）
+
+加入以下配置：
+
+```xml
+<dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-ribbon</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-eureka</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
+```
+
+
+
+启动类上加上
+
+```java
+// RestTemplate上加上该注解
+@LoadBalanced
+```
+
+
+
+
+
+自定义负载均衡
+
+```java
+//配置文件中配置IRULE的接口类，就会默认替换掉原来
+@Bean
+public IRule rule(){
+   return new RandomRule();
+}
 ```
 
