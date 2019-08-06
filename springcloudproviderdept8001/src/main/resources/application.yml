@@ -1,5 +1,7 @@
 server:
-  port: 8081
+  port: 8001
+
+#debug: true
 
 mybatis:
   config-location: classpath:mybatis/mybatis.cfg.xml
@@ -12,8 +14,8 @@ spring:
     name: provider-dept-8001
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
-    driver-class-name: org.gjt.mm.mysql.Driver              # mysql驱动包
-    url: jdbc:mysql://localhost:3306/cloudDB1              # 数据库名称
+    driver-class-name: com.mysql.jdbc.Driver                # mysql驱动包
+    url: jdbc:mysql://localhost:3306/clouddb01              # 数据库名称
     username: root
     password: 123456
     dbcp2:
@@ -26,7 +28,7 @@ eureka:
   client: #客户端注册进eureka服务列表内
     service-url:
       #defaultZone: http://localhost:7001/eureka
-      defaultZone: http://localhost:7001/eureka/
+      defaultZone: http://localhost:7001/eureka/,http://localhost:7002/eureka/,http://localhost:7003/eureka/
   instance:
     instance-id: provider-dept8001
     prefer-ip-address: true     #访问路径可以显示IP地址

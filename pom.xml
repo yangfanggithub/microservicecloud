@@ -9,6 +9,9 @@
         <module>springcloudapi</module>
         <module>springcloudproviderdept8001</module>
         <module>springcloudconsumerdept80</module>
+        <module>springcloudeurekaservice7001</module>
+        <module>springcloudeurekaservice7002</module>
+        <module>springcloudeurekaservice7003</module>
     </modules>
     <packaging>pom</packaging>
 

@@ -8,7 +8,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>microservicecloud-provider-dept-8001</artifactId>
+    <artifactId>microservicecloudproviderdept8001</artifactId>
 
     <dependencies>
         <dependency>
